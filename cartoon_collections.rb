@@ -23,11 +23,8 @@ def find_the_cheese(array)
   # input: A list of items, one of which should be a cheese in the cheese list
   # output: the type of cheese matched with one on the list below
   cheese_types = ["cheddar", "gouda", "camembert"]
-  # default memo to false (not found)
-  cheese = cheese_types.find { | obj_a |
-    memo_a = array.find { |obj_b |
-      obj_a == obj_b
-    }
-  }
-  return cheese
-end
+  
+    array.find do |item|
+      cheese_types.include?(item)
+    end
+  end
